@@ -18,8 +18,9 @@
                 </div>
             </div>
             <div class="col">
-                <div id="displayKøleskab">
-                    <p th:text="${ingrediens.getIngrediens()}"></p>
+                <h4>Dine ingredienser</h4>
+                <div th:each="Lager : ${ingrediens}">
+                    <h th:text="${Lager.toString()}" />
                 </div>
             </div>
         </div>
