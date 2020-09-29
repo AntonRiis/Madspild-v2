@@ -1,6 +1,5 @@
 package com.example.demo.controllers;
 
-import com.example.demo.models.Lager;
 import com.example.demo.models.Opskrifter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +12,9 @@ import java.util.ArrayList;
 @Controller
 public class Madspildcontroller {
 
-
     ArrayList<String> listLager = new ArrayList<>();
+    ArrayList<String> koedsovs = new ArrayList<>();
+    ArrayList<String> burger = new ArrayList<>();
 
     @GetMapping("/")
     public String index(Model lagerModel) {
@@ -29,17 +29,31 @@ public class Madspildcontroller {
         return "redirect:/";
     }
 
+    @PostMapping("/removeLastFromLager")
+    public String removeLast(WebRequest formData) {
+        listLager.remove(listLager.size()-1);
+        return "redirect:/";
+    }
+
     @PostMapping("/opskrifter")
-    public String postOpskrifter(ArrayList listLager) {
-        Opskrifter koedsovs = new Opskrifter("hakkekød","pasta","tomat","","");
+    public String postOpskrifter(Model opskriftModel) {
+        koedsovs.add("Hakkekød");
+        koedsovs.add("Pasta");
+        koedsovs.add("Tomater");
+        burger.add("Hakkekød");
+        burger.add("Ost");
+        burger.add("Tomater");
 
-        for(Object i: listLager) {
-            if (i.equals(koedsovs.getIngrediens1())) {
-                return "pasta med kødsovs, mums";
+        for (Object i : listLager) {
+            if (listLager.contains("Hakkekød") || listLager.contains("Pasta") || listLager.contains("Tomater")) {
+                opskriftModel.addAttribute("kødsovs", koedsovs);
+                return "opskrifter";
             }
-            return "ups";
+            if (listLager.contains("Hakkekød") || listLager.contains("Ost") || listLager.contains("Tomater")) {
+                return "opskrifter";
+            }
+            return "redirect:/";
         }
-        return "ups";
-
+        return "redirect:/";
     }
 }

@@ -9,19 +9,39 @@
     <div class="container">
         <div class="row">
             <div class="col">
+
                 <div id="form-container">
-                    <form id="køleskabs-form" action="/opskrifter" method="post">
+                    <form id="køleskabs-form" action="/lager" method="post">
                         <label for="ingrediens">Ingrediens</label>
                         <input type="text" id="ingrediens" name="ingrediens"><br><br>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Tilføj til dine ingredienser">
+                    </form>
+
+                    <form id="fortryd-form" action="/removeLastFromLager" method="post">
+                        <input type="submit" value="Fortryd seneste tilføjelse">
                     </form>
                 </div>
+
             </div>
+
             <div class="col">
                 <h4>Dine ingredienser</h4>
                 <div th:each="Lager : ${ingrediens}">
-                    <h th:text="${Lager.toString()}" />
+                    <h th:text="${Lager}" />
                 </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+
+                <div id="opskrift-container">
+                    <form id="opskrift-form" action="/opskrifter" method="post">
+                        <h4>Find opskrifter!</h4>
+                        <input type="submit" value="Find mulige opskrifter!">
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>
