@@ -1,6 +1,5 @@
 package com.example.demo.controllers;
 
-import com.example.demo.models.Opskrifter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,8 +12,11 @@ import java.util.ArrayList;
 public class Madspildcontroller {
 
     ArrayList<String> listLager = new ArrayList<>();
-    ArrayList<String> koedsovs = new ArrayList<>();
-    ArrayList<String> burger = new ArrayList<>();
+
+    //Opskrifter
+    String[] burger = new String[] {"Hakkekød","Ost","Tomater"};
+    String[] koedsovs = new String[] {"Hakkekød","Pasta","Tomater"};
+
 
     @GetMapping("/")
     public String index(Model lagerModel) {
@@ -30,23 +32,16 @@ public class Madspildcontroller {
     }
 
     @PostMapping("/removeLastFromLager")
-    public String removeLast(WebRequest formData) {
+    public String removeLast() {
         listLager.remove(listLager.size()-1);
         return "redirect:/";
     }
 
     @PostMapping("/opskrifter")
-    public String postOpskrifter(Model opskriftModel) {
-        koedsovs.add("Hakkekød");
-        koedsovs.add("Pasta");
-        koedsovs.add("Tomater");
-        burger.add("Hakkekød");
-        burger.add("Ost");
-        burger.add("Tomater");
+    public String postOpskrifter() {
 
         for (Object i : listLager) {
             if (listLager.contains("Hakkekød") || listLager.contains("Pasta") || listLager.contains("Tomater")) {
-                opskriftModel.addAttribute("kødsovs", koedsovs);
                 return "opskrifter";
             }
             if (listLager.contains("Hakkekød") || listLager.contains("Ost") || listLager.contains("Tomater")) {
