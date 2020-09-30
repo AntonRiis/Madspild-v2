@@ -8,43 +8,24 @@
 <body>
 <div class="container">
 
-    <form id="Backbutton">
+    <form id="forside-form" action="/removeOpskrifter" method="post">
         <input type="button" value="Tilbage til forsiden" onclick="history.back(-1)">
     </form>
 
     <div class="row">
         <div class="col">
+
             <div class="col">
+                <h4>Mulige Opskrifter</h4>
+                <div th:each="listOfOpskrifter : ${opskrift}">
+                    <h th:text="${listOfOpskrifter.getName()}" />
+                    <img th:attr="src=${listOfOpskrifter.getUrl()} + '.jpg'
+                            ,alt=${listOfOpskrifter.getName()}" />
 
-                <h4>Opskrift til pasta med kødsovs</h4>
-                <div th:each="koedsovs : ${String}">
-                    <h th:text="${koedsovs}" />
                 </div>
-
             </div>
 
-            <div id="kødsovs_jpg">
-                <a href="https://www.mad-og-drikke.dk/opskrift/aegte-italiensk-koedsauce">
-                <img src="Koedsovs.jpg" alt="Kødsovsbillede"
-                     width="width" height="height">
-                </a>
-            </div>
         </div>
-    </div>
-
-    <div class="col">
-        <h4>Opskrift til burg</h4>
-        <div th:each="burger : ${String}">
-            <h th:text="${burger}" />
-        </div>
-    </div>
-
-    <div id="Burger_jpg">
-        <a href="https://www.gastrofun.dk/opskrift/hjemmelavet-burger-shack-burger">
-            <img src="Burger.jpg" alt="Burgerbillede"
-                 width="width" height="height">
-        </a>
-
     </div>
 </div>
 

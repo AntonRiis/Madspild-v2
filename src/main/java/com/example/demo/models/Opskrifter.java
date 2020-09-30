@@ -1,29 +1,28 @@
-
 package com.example.demo.models;
-
-import java.util.ArrayList;
 
 public class Opskrifter {
 
-    private String ingrediens;
+    private String name;
+    private String url;
 
-    public String getIngrediens() {
-        return ingrediens;
+    public Opskrifter(String name, String url) {
+        this.name = name;
+        this.url = url;
     }
 
-    public void setIngrediens(String ingrediens) {
-        this.ingrediens = ingrediens;
+    public String getName() {
+        return name;
     }
 
-    public Opskrifter(String ingrediens) {
-        this.ingrediens = ingrediens;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
-/*
-    public Object koedsovs() {
-
-        return koedsovs;
-    }
-
-}
-*/

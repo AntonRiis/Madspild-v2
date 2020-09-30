@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import com.example.demo.models.Opskrifter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +15,10 @@ public class Madspildcontroller {
     ArrayList<String> listLager = new ArrayList<>();
 
     //Opskrifter
-    String[] burger = new String[] {"Hakkekød","Ost","Tomater"};
-    String[] koedsovs = new String[] {"Hakkekød","Pasta","Tomater"};
+    //String[] burger = new String[] {"Hakkekød","Ost","Tomater"};
+    // String[] koedsovs = new String[] {"Hakkekød","Pasta","Tomater"};
+
+    ArrayList<Opskrifter> listOfOpskrifter = new ArrayList<>();
 
 
     @GetMapping("/")
@@ -37,18 +40,35 @@ public class Madspildcontroller {
         return "redirect:/";
     }
 
-    @PostMapping("/opskrifter")
+
+    @GetMapping("/opskrifter")
+    public String opskrifter(Model opskriftModel) {
+        opskriftModel.addAttribute("opskrift",listOfOpskrifter);
+        return "opskrifter";
+    }
+
+    @PostMapping("/addOpskrifter")
     public String postOpskrifter() {
 
         for (Object i : listLager) {
             if (listLager.contains("Hakkekød") || listLager.contains("Pasta") || listLager.contains("Tomater")) {
-                return "opskrifter";
+                Opskrifter pastakoedsovs = new Opskrifter("Pasta med Kødsovs","Koedsovs");
+                listOfOpskrifter.add(pastakoedsovs);
             }
             if (listLager.contains("Hakkekød") || listLager.contains("Ost") || listLager.contains("Tomater")) {
-                return "opskrifter";
+                Opskrifter Burger = new Opskrifter("Burger","Burger");
+                listOfOpskrifter.add(Burger);
             }
-            return "redirect:/";
+            return "redirect:/opskrifter";
         }
         return "redirect:/";
+    }
+
+    @PostMapping("/removeOpskrifter")
+    public String removeOpskrifter() {
+        for (int i = 0; i < listOfOpskrifter.size(); i++) {
+            listOfOpskrifter.remove(listOfOpskrifter.size() -1);
+        }
+        return "redirect:/opskrifter";
     }
 }

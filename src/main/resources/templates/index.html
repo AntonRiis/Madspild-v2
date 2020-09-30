@@ -26,8 +26,9 @@
 
             <div class="col">
                 <h4>Dine ingredienser</h4>
-                <div th:each="Lager : ${ingrediens}">
-                    <h th:text="${Lager}" />
+                <div th:each="listLager : ${ingrediens}">
+                    <h th:text="${listLager}" />
+
                 </div>
             </div>
 
@@ -36,7 +37,7 @@
             <div class="col">
 
                 <div id="opskrift-container">
-                    <form id="opskrift-form" action="/opskrifter" method="post">
+                    <form id="opskrift-form" action="/addOpskrifter" method="post">
                         <h4>Find opskrifter!</h4>
                         <input type="submit" value="Find mulige opskrifter!">
                     </form>
