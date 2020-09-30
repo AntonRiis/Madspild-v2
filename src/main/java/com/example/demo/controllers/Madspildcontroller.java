@@ -51,11 +51,11 @@ public class Madspildcontroller {
     public String postOpskrifter() {
 
         for (Object i : listLager) {
-            if (listLager.contains("Hakkekød") || listLager.contains("Pasta") || listLager.contains("Tomater")) {
+            if (listLager.contains("Hakkekød") && listLager.contains("Pasta") && listLager.contains("Tomater")) {
                 Opskrifter pastakoedsovs = new Opskrifter("Pasta med Kødsovs","Koedsovs");
                 listOfOpskrifter.add(pastakoedsovs);
             }
-            if (listLager.contains("Hakkekød") || listLager.contains("Ost") || listLager.contains("Tomater")) {
+            if (listLager.contains("Hakkekød") && listLager.contains("Ost") && listLager.contains("Tomater")) {
                 Opskrifter Burger = new Opskrifter("Burger","Burger");
                 listOfOpskrifter.add(Burger);
             }
@@ -66,9 +66,7 @@ public class Madspildcontroller {
 
     @PostMapping("/removeOpskrifter")
     public String removeOpskrifter() {
-        for (int i = 0; i < listOfOpskrifter.size(); i++) {
-            listOfOpskrifter.remove(listOfOpskrifter.size() -1);
-        }
-        return "redirect:/opskrifter";
+        listOfOpskrifter.clear();
+        return "redirect:/";
     }
 }
