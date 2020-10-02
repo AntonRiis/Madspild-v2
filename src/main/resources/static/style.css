@@ -10,6 +10,8 @@ body {
     margin-top: 14%;
     background: rgba(211, 211, 211, 0.3);
     padding: 30px;
+    border: 3px solid green;
+    border-radius: 5px 5px;
 
 }
 #text-container{
@@ -27,22 +29,43 @@ body {
     padding: 30px;
 
 
+
 }
 #listLager {
     padding: 30px;
     color: aliceblue;
     font-size: 1.5em;
-    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-width: 0.25px;
     -webkit-text-stroke-color: black;
 }
 #fortryd-form {
     float: right;
+    border: 3px solid grey;
+    border-radius: 5px 5px;
+    background: aliceblue;
 }
 #submit-form{
     float: left;
+    border: 3px solid grey;
+    border-radius: 5px 5px;
+    background: aliceblue;
+    width: 198px;
+
 }
 
 #opskrift-form {
     float: right;
-    margin-right: 35%;
+    margin-right: 31.25%;
+    border: 3px solid grey;
+    border-radius: 5px 5px;
+    background: aliceblue;
+}
+#ingrediens {
+    float: left;
+    width: 198px;
+    border: 3px solid grey;
+    border-radius: 5px 5px;
+    outline: none;
+    color: black;
+    padding: 3px;
 }
