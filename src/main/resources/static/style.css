@@ -1,0 +1,23 @@
+#index-background {
+    background: rgba(211, 211, 211, 0.6);
+    padding: 30px;
+    border:solid;
+    border-width: 0.5px;
+}
+#form-container {
+    padding: 30px;
+    border:solid;
+    border-width: 0.5px;
+
+}
+#listLager {
+    padding: 30px;
+    border:solid;
+    border-width: 0.5px;
+}
+#fortryd-form {
+    float: right;
+}
+#submit-form{
+    float: left;
+}

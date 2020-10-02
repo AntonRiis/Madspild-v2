@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:href="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Madspild</title>
     <link href="style.css" type="text/css" rel="stylesheet">
@@ -21,6 +21,7 @@
                     <h th:text="${listOfOpskrifter.getName()}" />
                     <img th:attr="src=${listOfOpskrifter.getUrl()} + '.jpg'
                             ,alt=${listOfOpskrifter.getName()}" />
+                        <p th:text="${listOfOpskrifter.getText()}" ></p>
 
                 </div>
             </div>

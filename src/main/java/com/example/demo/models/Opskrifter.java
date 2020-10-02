@@ -4,10 +4,16 @@ public class Opskrifter {
 
     private String name;
     private String url;
+    private String text;
 
-    public Opskrifter(String name, String url) {
+    public Opskrifter(String name, String url, String text) {
         this.name = name;
         this.url = url;
+        this.text = text;
+    }
+
+    public String getText() {
+        return text;
     }
 
     public String getName() {

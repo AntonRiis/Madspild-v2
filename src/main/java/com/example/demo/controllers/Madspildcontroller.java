@@ -52,11 +52,11 @@ public class Madspildcontroller {
 
         for (Object i : listLager) {
             if (listLager.contains("Hakkekød") && listLager.contains("Pasta") && listLager.contains("Tomater")) {
-                Opskrifter pastakoedsovs = new Opskrifter("Pasta med Kødsovs","Koedsovs");
+                Opskrifter pastakoedsovs = new Opskrifter("Pasta med Kødsovs","Koedsovs","dette er en pastaret");
                 listOfOpskrifter.add(pastakoedsovs);
             }
             if (listLager.contains("Hakkekød") && listLager.contains("Ost") && listLager.contains("Tomater")) {
-                Opskrifter Burger = new Opskrifter("Burger","Burger");
+                Opskrifter Burger = new Opskrifter("Burger","Burger","burg");
                 listOfOpskrifter.add(Burger);
             }
             return "redirect:/opskrifter";
