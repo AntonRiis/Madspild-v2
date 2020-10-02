@@ -3,6 +3,11 @@
     padding: 30px;
     border:solid;
     border-width: 0.5px;
+    height: 100%;
+}
+#text-container{
+    font-size: 2em;
+    padding: 30px;
 }
 #form-container {
     padding: 30px;
@@ -20,4 +25,9 @@
 }
 #submit-form{
     float: left;
+}
+
+#opskrift-form {
+    float: right;
+    margin-right: 35%;
 }
