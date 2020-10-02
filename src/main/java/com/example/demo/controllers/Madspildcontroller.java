@@ -52,12 +52,16 @@ public class Madspildcontroller {
 
         for (Object i : listLager) {
             if (listLager.contains("Hakkekød") || listLager.contains("Pasta") || listLager.contains("Tomater")) {
-                Opskrifter pastakoedsovs = new Opskrifter("Pasta med Kødsovs","Koedsovs","dette er en pastaret");
+                Opskrifter pastakoedsovs = new Opskrifter("Pasta med Kødsovs","Koedsovs","Lækker pastaret til næsten ingen penge Kræver kun Hakkekød, Pasta og tomater");
                 listOfOpskrifter.add(pastakoedsovs);
             }
             if (listLager.contains("Hakkekød") || listLager.contains("Ost") || listLager.contains("Tomater")) {
                 Opskrifter Burger = new Opskrifter("Burger","Burger","burg");
                 listOfOpskrifter.add(Burger);
+            }
+            if (listLager.contains("Ost") || listLager.contains("Rugbrød") || listLager.contains("Smør")) {
+                Opskrifter Ostemad = new Opskrifter("Ostemad","Ostemad","nem og lækker ostemad");
+                listOfOpskrifter.add(Ostemad);
             }
             return "redirect:/opskrifter";
         }

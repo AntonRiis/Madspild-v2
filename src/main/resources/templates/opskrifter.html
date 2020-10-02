@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:style="http://www.w3.org/1999/xhtml">
 <head>
     <title>Madspild</title>
     <link href="styleOpskrifter.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
+<div class="container" id="opskriftBackground-container">
 
     <form id="forside-form" action="/removeOpskrifter" method="post">
         <input type="submit" value="Tilbage til forsiden">
     </form>
 
+    <div id ="opskriftText-container">
+        <label text="forside-text">Velkommen til Madspild.dk <br>
+                                    Her er alle mulige retter til de ingredienser du valgte!</label>
+    </div>
+
     <div class="row">
         <div class="col">
 
-            <div class="col">
-                <h4>Mulige Opskrifter</h4>
+            <div class="col" id="opskrift-container">
                 <div th:each="listOfOpskrifter : ${opskrift}">
-                    <h th:text="${listOfOpskrifter.getName()}" />
-                    <img th:attr="src=${listOfOpskrifter.getUrl()} + '.jpg'
-                            ,alt=${listOfOpskrifter.getName()}" />
-                        <p th:text="${listOfOpskrifter.getText()}" ></p>
-
-                </div>
+                    <h4 th:text="${listOfOpskrifter.getName()}" id="opskriftHeading"></h4>
+                    <img th:attr="src=${listOfOpskrifter.getUrl()} + '.jpg' ,alt=${listOfOpskrifter}" id="opskriftPicture"/>
+                    <p th:text="${listOfOpskrifter.getText()}" id="opskriftText"></p>
             </div>
 
+            </div>
         </div>
     </div>
 </div>

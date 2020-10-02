@@ -21,16 +21,14 @@ body {
     -webkit-text-stroke-color: black;
     font-size: 2em;
     padding: 30px;
-
 }
 
 #form-container {
     font-weight: bold;
     padding: 30px;
-
-
-
 }
+
+
 #listLager {
     padding: 30px;
     color: aliceblue;
@@ -38,6 +36,7 @@ body {
     -webkit-text-stroke-width: 0.25px;
     -webkit-text-stroke-color: black;
 }
+
 #fortryd-form {
     float: right;
     border: 3px solid grey;
