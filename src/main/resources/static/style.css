@@ -68,3 +68,15 @@ body {
     color: black;
     padding: 3px;
 }
+/* Virker ikke af en eller anden grund */
+#forside-form {
+    border: 3px solid grey;
+    border-radius: 5px 5px;
+    background: aliceblue;
+}
+#opskriftBackground-container {
+    text-weight: bold;
+    color: aliceblue;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
+}

@@ -52,15 +52,15 @@ public class Madspildcontroller {
 
         for (Object i : listLager) {
             if (listLager.contains("Hakkekød") || listLager.contains("Pasta") || listLager.contains("Tomater")) {
-                Opskrifter pastakoedsovs = new Opskrifter("Pasta med Kødsovs","Koedsovs","Lækker pastaret til næsten ingen penge Kræver kun Hakkekød, Pasta og tomater");
+                Opskrifter pastakoedsovs = new Opskrifter("Pasta med Kødsovs","Koedsovs","Lækker pastaret til næsten ingen penge. Kræver kun hakkekød, pasta og tomater");
                 listOfOpskrifter.add(pastakoedsovs);
             }
             if (listLager.contains("Hakkekød") || listLager.contains("Ost") || listLager.contains("Tomater")) {
-                Opskrifter Burger = new Opskrifter("Burger","Burger","burg");
+                Opskrifter Burger = new Opskrifter("Burger","Burger","Dejlig saftig burger som hele familien kan lide. Kræver kun burgerboller, hakkekød, ost, og overskydende grøntsager i køleskabet");
                 listOfOpskrifter.add(Burger);
             }
             if (listLager.contains("Ost") || listLager.contains("Rugbrød") || listLager.contains("Smør")) {
-                Opskrifter Ostemad = new Opskrifter("Ostemad","Ostemad","nem og lækker ostemad");
+                Opskrifter Ostemad = new Opskrifter("Ostemad","Ostemad","Behøver vi virkelig at fortælle dig hvad den her ret består af?");
                 listOfOpskrifter.add(Ostemad);
             }
             return "redirect:/opskrifter";
