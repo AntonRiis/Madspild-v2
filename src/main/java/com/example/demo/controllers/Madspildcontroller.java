@@ -31,6 +31,7 @@ public class Madspildcontroller {
     public String postIngredient(WebRequest formData) {
         String lager = formData.getParameter("ingrediens");
         listLager.add(lager);
+        listOfOpskrifter.clear();
         return "redirect:/";
     }
 
