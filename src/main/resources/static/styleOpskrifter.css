@@ -8,6 +8,8 @@ body {
 #opskriftBackground-container {
     background: rgba(211, 211, 211, 0.6);
     margin: fill;
+    border: 3px solid green;
+    border-radius: 5px 5px;
 }
 
 #opskriftText-container {
