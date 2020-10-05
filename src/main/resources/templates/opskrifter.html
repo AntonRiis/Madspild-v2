@@ -24,7 +24,7 @@
                 <div th:each="listOfOpskrifter : ${opskrift}">
                     <h4 th:text="${listOfOpskrifter.getName()}" id="opskriftHeading"></h4>
                     <img th:attr="src=${listOfOpskrifter.getUrl()} + '.jpg' ,alt=${listOfOpskrifter}" id="opskriftPicture"/>
-                    <p th:text="${listOfOpskrifter.getText()}" id="opskriftText"></p>
+                    <p href="https://www.valdemarsro.dk/lasagne/"< th:text="${listOfOpskrifter.getText()}" id="opskriftText"></p>
             </div>
 
             </div>

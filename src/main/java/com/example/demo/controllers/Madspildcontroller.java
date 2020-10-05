@@ -13,11 +13,6 @@ import java.util.ArrayList;
 public class Madspildcontroller {
 
     ArrayList<String> listLager = new ArrayList<>();
-
-    //Opskrifter
-    //String[] burger = new String[] {"Hakkekød","Ost","Tomater"};
-    // String[] koedsovs = new String[] {"Hakkekød","Pasta","Tomater"};
-
     ArrayList<Opskrifter> listOfOpskrifter = new ArrayList<>();
 
 
@@ -56,27 +51,27 @@ public class Madspildcontroller {
                 Opskrifter pastakoedsovs = new Opskrifter("Pasta med Kødsovs","Koedsovs","Lækker pastaret til næsten ingen penge. Kræver kun hakkekød, pasta og tomater");
                 listOfOpskrifter.add(pastakoedsovs);
             }
-            if (listLager.contains("Hakkekød") && listLager.contains("Ost") && listLager.contains("Grøntsager") && listLager.contains("Brød")) {
+            if (listLager.contains("Hakkekød") && listLager.contains("Grøntsager") && listLager.contains("Brød")) {
                 Opskrifter Burger = new Opskrifter("Burger","Burger","Dejlig saftig burger som hele familien kan lide. Kræver kun burgerboller, hakkekød, ost, og overskydende grøntsager i køleskabet");
                 listOfOpskrifter.add(Burger);
             }
-            if (listLager.contains("Ost") && listLager.contains("brød") && listLager.contains("Smør")) {
+            if (listLager.contains("Ost") && listLager.contains("Brød")) {
                 Opskrifter Ostemad = new Opskrifter("Ostemad","Ostemad","Behøver vi virkelig at fortælle dig hvad den her ret består af?");
                 listOfOpskrifter.add(Ostemad);
             }
             if (listLager.contains("Ost") && listLager.contains("Hakkekød")) {
-                Opskrifter Lasagne = new Opskrifter("Lasagne","Lasagne","Nem og danmarks favoritret, lasagnen kan altid spises!");
+                Opskrifter Lasagne = new Opskrifter("Lasagne","Lasagne","Danmarks favoritret, nem og lækker lasagnen kan altid spises!");
                 listOfOpskrifter.add(Lasagne);
             }
-            if (listLager.contains("Ris") && listLager.contains("Soya")) {
+            if (listLager.contains("Ris")) {
                 Opskrifter SoyaRis = new Opskrifter("Ris med Soya", "SoyaRis", "Når pengene er helt i bund, så svigter en skål ris med soya aldrig");
                 listOfOpskrifter.add(SoyaRis);
             }
-            if (listLager.contains("Ris") && listLager.contains("Kylling") && listLager.contains("Grøntsager")) {
+            if (listLager.contains("Ris") && listLager.contains("Kylling")) {
                 Opskrifter KyllingRis = new Opskrifter("Kylling med ris", "KyllingRis", "Lækker asiatisk ret med ris, kylling og dine yndlings grøntsager, mums!");
                 listOfOpskrifter.add(KyllingRis);
             }
-            if (listLager.contains("Kylling") && listLager.contains("Kartofler") && listLager.contains("Grøntsager")) {
+            if (listLager.contains("Kylling") && listLager.contains("Kartofler")) {
                 Opskrifter KyllingKartofler = new Opskrifter("Kylling med kartofler", "KyllingKartofler", "En klassiker som alle kan lide, tilføj din favorit grøntsager samt krydderier til kyllingen!");
                 listOfOpskrifter.add(KyllingKartofler);
             }
